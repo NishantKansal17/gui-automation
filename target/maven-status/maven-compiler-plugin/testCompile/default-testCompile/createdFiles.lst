@@ -1,0 +1,3 @@
+com\cisco\gui\automation\report\ReportGenerator.class
+com\cisco\gui\automation\CPSCentralBasicAutomationTest.class
+com\cisco\gui\automation\PolicyBuilderBasicAutomationTest.class

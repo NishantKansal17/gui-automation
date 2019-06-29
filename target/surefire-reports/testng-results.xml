@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="29983" started-at="2019-06-29T12:42:26Z" finished-at="2019-06-29T12:42:56Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="29983" started-at="2019-06-29T12:42:26Z" finished-at="2019-06-29T12:42:56Z">
+      <class name="com.cisco.gui.automation.CPSCentralBasicAutomationTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cisco.gui.automation.CPSCentralBasicAutomationTest@17550481]" name="setUp" is-config="true" duration-ms="16069" started-at="2019-06-29T05:42:26Z" finished-at="2019-06-29T05:42:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLoginToCpsCentral()[pri:0, instance:com.cisco.gui.automation.CPSCentralBasicAutomationTest@17550481]" name="testLoginToCpsCentral" duration-ms="12350" started-at="2019-06-29T05:42:42Z" finished-at="2019-06-29T05:42:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginToCpsCentral -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.cisco.gui.automation.CPSCentralBasicAutomationTest@17550481]" name="tearDown" is-config="true" duration-ms="1546" started-at="2019-06-29T05:42:54Z" finished-at="2019-06-29T05:42:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.cisco.gui.automation.CPSCentralBasicAutomationTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
