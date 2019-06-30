@@ -150,7 +150,7 @@ public class CPSCentralBasicAutomationTest {
 		    WebElement inputGrpBtn = inputGroup.findElement(By.className("input-group-btn"));
 		    WebElement permissionBtn = inputGrpBtn.findElement(By.className("permission_button"));
 		    WebElement importFile = permissionBtn.findElement(By.id("importFile"));
-		    System.out.println("File Path: " + exportedFile.getAbsolutePath());
+		    //System.out.println("File Path: " + exportedFile.getAbsolutePath());
 		    importFile.sendKeys(exportedFile.getAbsolutePath());
 		    Thread.sleep(4000);
 		    
