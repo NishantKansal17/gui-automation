@@ -108,6 +108,7 @@ public class CPSCentralBasicAutomationTest {
 		  WebElement exportButton = this.driver.findElement(By.id("exportButton"));
 		  exportButton.click();
 		  Thread.sleep(20000);
+		  System.out.println("File exported successfully!");
 	  }
 	  
 //	  @Test
