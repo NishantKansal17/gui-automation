@@ -111,10 +111,41 @@ public class CPSCentralBasicAutomationTest {
 		  System.out.println("File exported successfully!");
 	  }
 	  
-//	  @Test
-//	  public void testImportCps() throws Exception {
-//		  selenium.open( baseUrl + "/central" );
-//		  selenium.waitForPageToLoad( "20000" );
+	  @Test
+	  public void testImportCps() throws Exception {
+		  selenium.open( baseUrl + "/central" );
+		  selenium.waitForPageToLoad( "20000" );
+		  WebElement userTxt = this.driver.findElement(By.id("User"));
+		  userTxt.sendKeys("qns-svn");
+		  Thread.sleep(3000);
+		  
+		  WebElement pwdTxt = this.driver.findElement(By.id("Password"));
+		  pwdTxt.sendKeys("cisco123");
+		  Thread.sleep(3000);
+		  
+		  WebElement loginBtn = this.driver.findElement(By.id("loginBtn"));
+		  loginBtn.click();
+		  Thread.sleep(3000);
+		  
+		  WebElement linkImportExport = this.driver.findElement(By.linkText("Import/Export"));
+		  linkImportExport.click();
+		  Thread.sleep(3000);
+		  
+		  WebElement exportUrl = this.driver.findElement(By.id("exportUrl"));
+		  exportUrl.clear();
+		  exportUrl.sendKeys("http://pcrfclient01/repos/configuration");
+		  Thread.sleep(5000);
+		  
+		  WebElement exportName = this.driver.findElement(By.id("exportName"));
+		  exportName.clear();
+		  exportName.sendKeys("gui-automation-export");
+		  Thread.sleep(5000);
+		  
+		  WebElement exportButton = this.driver.findElement(By.id("exportButton"));
+		  exportButton.click();
+		  Thread.sleep(20000);
+		  System.out.println("File exported successfully!");
+		  
 //		  WebElement userTxt = this.driver.findElement(By.id("User"));
 //		  userTxt.sendKeys("qns-svn");
 //		  Thread.sleep(3000);
@@ -130,64 +161,64 @@ public class CPSCentralBasicAutomationTest {
 //		  WebElement linkImportExport = this.driver.findElement(By.linkText("Import/Export"));
 //		  linkImportExport.click();
 //		  Thread.sleep(3000);
-//		  
-//		  WebElement importTab = this.driver.findElement(By.linkText("Import"));
-//		  importTab.click();
-//		  Thread.sleep(3000);
-//		  
-//		  File exportedFile = null;
-//		  File d = new File(fileDownloadPath);
-//		    if (d.isDirectory()) {
-//		    	File[] files = d.listFiles();
-//		    	for (File f : files) {
-//		    		if (f.getName().contains(".cps")) {
-//		    			exportedFile = f;
-//		    			break;
-//		    		}
-//		    	}
-//		    }
-//		    
-//		    WebElement inputGroup = this.driver.findElement(By.className("input-group"));
-//		    WebElement inputGrpBtn = inputGroup.findElement(By.className("input-group-btn"));
-//		    WebElement permissionBtn = inputGrpBtn.findElement(By.className("permission_button"));
-//		    WebElement importFile = permissionBtn.findElement(By.id("importFile"));
-//		    //System.out.println("File Path: " + exportedFile.getAbsolutePath());
-//		    importFile.sendKeys(exportedFile.getAbsolutePath());
-//		    Thread.sleep(4000);
-//		    
-//		    WebElement importUrl = this.driver.findElement(By.id("importUrl"));
-//		    importUrl.clear();
-//		    importUrl.sendKeys("http://pcrfclient01/repos/configuration");
-//		    Thread.sleep(2000);
-//		    
-//		    WebElement importButton = this.driver.findElement(By.id("importButton"));
-//		    importButton.click();
-//		    Thread.sleep(20000);
-//		    
-//		    this.driver.switchTo().activeElement();
-//		    
-//		    WebElement closeBtn = this.driver.findElement(By.xpath("//*[@id=\"responseModal\"]/div/div/div[3]/button"));
-//		    closeBtn.click();
-//		    Thread.sleep(5000);
-//		    
-//		    WebElement publishLink = this.driver.findElement(By.linkText("Publish"));
-//		    publishLink.click();
-//		    Thread.sleep(5000);
-//		    
-//		    WebElement commitMessage = this.driver.findElement(By.id("commitMessage"));
-//		    commitMessage.sendKeys("Publishing...");
-//		    Thread.sleep(5000);
-//		    
-//		    List<WebElement> rows = this.driver.findElements(By.className("row"));
-//		    System.out.println(rows.get(rows.size()-1));
-//		    WebElement row = rows.get(rows.size()-1);
-//		    WebElement colXs12 = row.findElement(By.className("col-xs-12"));
-//		    WebElement pullRight = colXs12.findElement(By.className("pull-right"));
-//		    List<WebElement> buttons = pullRight.findElements(By.tagName("button"));
-//		    System.out.println(buttons.size());
-//		    buttons.get(1).click();
-//		    Thread.sleep(20000);
-//	  }
+		  
+		  WebElement importTab = this.driver.findElement(By.linkText("Import"));
+		  importTab.click();
+		  Thread.sleep(3000);
+		  
+		  File exportedFile = null;
+		  File d = new File(fileDownloadPath);
+		    if (d.isDirectory()) {
+		    	File[] files = d.listFiles();
+		    	for (File f : files) {
+		    		if (f.getName().contains(".cps")) {
+		    			exportedFile = f;
+		    			break;
+		    		}
+		    	}
+		    }
+		    
+		    WebElement inputGroup = this.driver.findElement(By.className("input-group"));
+		    WebElement inputGrpBtn = inputGroup.findElement(By.className("input-group-btn"));
+		    WebElement permissionBtn = inputGrpBtn.findElement(By.className("permission_button"));
+		    WebElement importFile = permissionBtn.findElement(By.id("importFile"));
+		    //System.out.println("File Path: " + exportedFile.getAbsolutePath());
+		    importFile.sendKeys(exportedFile.getAbsolutePath());
+		    Thread.sleep(4000);
+		    
+		    WebElement importUrl = this.driver.findElement(By.id("importUrl"));
+		    importUrl.clear();
+		    importUrl.sendKeys("http://pcrfclient01/repos/configuration");
+		    Thread.sleep(2000);
+		    
+		    WebElement importButton = this.driver.findElement(By.id("importButton"));
+		    importButton.click();
+		    Thread.sleep(20000);
+		    
+		    this.driver.switchTo().activeElement();
+		    
+		    WebElement closeBtn = this.driver.findElement(By.xpath("//*[@id=\"responseModal\"]/div/div/div[3]/button"));
+		    closeBtn.click();
+		    Thread.sleep(5000);
+		    
+		    WebElement publishLink = this.driver.findElement(By.linkText("Publish"));
+		    publishLink.click();
+		    Thread.sleep(5000);
+		    
+		    WebElement commitMessage = this.driver.findElement(By.id("commitMessage"));
+		    commitMessage.sendKeys("Publishing...");
+		    Thread.sleep(5000);
+		    
+		    List<WebElement> rows = this.driver.findElements(By.className("row"));
+		    System.out.println(rows.get(rows.size()-1));
+		    WebElement row = rows.get(rows.size()-1);
+		    WebElement colXs12 = row.findElement(By.className("col-xs-12"));
+		    WebElement pullRight = colXs12.findElement(By.className("pull-right"));
+		    List<WebElement> buttons = pullRight.findElements(By.tagName("button"));
+		    System.out.println(buttons.size());
+		    buttons.get(1).click();
+		    Thread.sleep(20000);
+	  }
 	  
 	  @Test
 	  public void testLoginToCpsCentral() throws Exception {
