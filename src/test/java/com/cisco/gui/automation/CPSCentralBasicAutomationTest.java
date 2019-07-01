@@ -32,7 +32,7 @@ public class CPSCentralBasicAutomationTest {
 
 	  private WebDriver driver;
 	  private Selenium selenium;
-	  private String fileDownloadPath = "/Users/nikansal/Downloads/";
+	  private String fileDownloadPath = "C:\\Program Files (x86)\\Jenkins\\workspace\\cps-gui-automation";
 
 	  static {
 	    System.setProperty( "webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" );
@@ -130,37 +130,6 @@ public class CPSCentralBasicAutomationTest {
 		  WebElement linkImportExport = this.driver.findElement(By.linkText("Import/Export"));
 		  linkImportExport.click();
 		  Thread.sleep(3000);
-		  
-		  WebElement exportUrl = this.driver.findElement(By.id("exportUrl"));
-		  exportUrl.clear();
-		  exportUrl.sendKeys("http://pcrfclient01/repos/configuration");
-		  Thread.sleep(5000);
-		  
-		  WebElement exportName = this.driver.findElement(By.id("exportName"));
-		  exportName.clear();
-		  exportName.sendKeys("gui-automation-export");
-		  Thread.sleep(5000);
-		  
-		  WebElement exportButton = this.driver.findElement(By.id("exportButton"));
-		  exportButton.click();
-		  Thread.sleep(20000);
-		  System.out.println("File exported successfully!");
-		  
-//		  WebElement userTxt = this.driver.findElement(By.id("User"));
-//		  userTxt.sendKeys("qns-svn");
-//		  Thread.sleep(3000);
-//		  
-//		  WebElement pwdTxt = this.driver.findElement(By.id("Password"));
-//		  pwdTxt.sendKeys("cisco123");
-//		  Thread.sleep(3000);
-//		  
-//		  WebElement loginBtn = this.driver.findElement(By.id("loginBtn"));
-//		  loginBtn.click();
-//		  Thread.sleep(3000);
-//		  
-//		  WebElement linkImportExport = this.driver.findElement(By.linkText("Import/Export"));
-//		  linkImportExport.click();
-//		  Thread.sleep(3000);
 		  
 		  WebElement importTab = this.driver.findElement(By.linkText("Import"));
 		  importTab.click();
