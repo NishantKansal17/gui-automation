@@ -1,11 +1,9 @@
 package com.cisco.gui.automation;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -14,7 +12,6 @@ import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -58,6 +55,8 @@ public class CPSCentralBasicAutomationTest {
 	    //driver = new InternetExplorerDriver(); // Not yet tested due to missing IE11 support
 	    selenium = new WebDriverBackedSelenium( driver, baseUrl );
 	    driver.manage().window().setSize( new Dimension( 1000, 600 ) );
+	    String workspace = System.getenv("WORKSPACE");
+	    System.out.println("workspace name: "+ workspace);
 	    //driver.manage().window().maximize();
 	    File d = new File(fileDownloadPath);
 	    if (d.isDirectory()) {
