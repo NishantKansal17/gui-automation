@@ -29,7 +29,7 @@ public class CPSCentralBasicAutomationTest {
 
 	  private WebDriver driver;
 	  private Selenium selenium;
-	  private String fileDownloadPath = "C:\\Program Files (x86)\\Jenkins\\workspace\\cps-gui-automation";
+	  private String fileDownloadPath = System.getenv("WORKSPACE"); 
 
 	  static {
 	    System.setProperty( "webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" );
