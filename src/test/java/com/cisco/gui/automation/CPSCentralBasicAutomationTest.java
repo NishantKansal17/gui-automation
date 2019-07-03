@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -54,12 +56,16 @@ public class CPSCentralBasicAutomationTest {
 		   prefsMap.put("profile.default_content_settings.popups", 0);
 		   prefsMap.put("download.default_directory", fileDownloadPath);
 		   
-		   ChromeOptions option = new ChromeOptions();
-		   option.setExperimentalOptions("prefs", prefsMap);
-		   option.addArguments("--test-type");
-		   option.addArguments("--disable-extensions");
+//		   ChromeOptions option = new ChromeOptions();
+//		   option.setExperimentalOptions("prefs", prefsMap);
+//		   option.addArguments("--test-type");
+//		   option.addArguments("--disable-extensions");
+		   FirefoxProfile profile = new FirefoxProfile();
+		   profile.setPreference("browser.download.dir", fileDownloadPath);
+		   profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream"); 
 	       
-	    driver = new ChromeDriver(option);
+	    //driver = new ChromeDriver(option);
+		   driver = new FirefoxDriver(profile);
 	    //driver = new InternetExplorerDriver(); // Not yet tested due to missing IE11 support
 	    selenium = new WebDriverBackedSelenium( driver, baseUrl );
 	    driver.manage().window().setSize( new Dimension( 1000, 600 ) );
