@@ -42,6 +42,9 @@ public class CPSCentralBasicAutomationTest {
 	  @BeforeClass
 	  public void setUp() throws Exception {
 	    //driver = new FirefoxDriver();
+		  if (System.getProperty("os.name").startsWith("Windows")) {
+			  fileDownloadPath = "/Users/nikansal/Downloads";
+		  }
 		  Map<String, Object> prefsMap = new HashMap<String, Object>();
 		   prefsMap.put("profile.default_content_settings.popups", 0);
 		   prefsMap.put("download.default_directory", fileDownloadPath);
@@ -55,9 +58,6 @@ public class CPSCentralBasicAutomationTest {
 	    //driver = new InternetExplorerDriver(); // Not yet tested due to missing IE11 support
 	    selenium = new WebDriverBackedSelenium( driver, baseUrl );
 	    driver.manage().window().setSize( new Dimension( 1000, 600 ) );
-	    String workspace = System.getenv("WORKSPACE");
-	    System.out.println("workspace name: "+ workspace);
-	    //driver.manage().window().maximize();
 	    File d = new File(fileDownloadPath);
 	    if (d.isDirectory()) {
 	    	File[] files = d.listFiles();

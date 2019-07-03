@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 60.715 s <<< FAILURE! - in TestSuite
-testLoadRepositoryAfterLogin(com.cisco.gui.automation.PolicyBuilderBasicAutomationTest)  Time elapsed: 0.194 s  <<< FAILURE!
-java.lang.IllegalStateException: 0 Elements for (//input)[1]
-	at com.cisco.gui.automation.PolicyBuilderBasicAutomationTest.testLoadRepositoryAfterLogin(PolicyBuilderBasicAutomationTest.java:58)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 295.965 s - in TestSuite
