@@ -29,7 +29,7 @@ public class PolicyBuilderBasicAutomationTest {
 	  private RapBot rap;
 
 	  static {
-	    System.setProperty( "webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" );
+	    System.setProperty( "webdriver.firefox.bin", "/usr/bin/firefox" );
 	    // see http://code.google.com/p/selenium/wiki/ChromeDriver
 	    if (System.getProperty("os.name").startsWith("Windows")) {
 	    	System.setProperty( "webdriver.chrome.driver", "C:\\Users\\nikansal\\Desktop\\chromedriver_win32\\chromedriver.exe" );
