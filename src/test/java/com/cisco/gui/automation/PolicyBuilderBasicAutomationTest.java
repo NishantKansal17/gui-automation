@@ -43,6 +43,7 @@ public class PolicyBuilderBasicAutomationTest {
 
 	  @BeforeClass
 	  public void setUp() throws Exception {
+		  System.setProperty("DISPLAY", ":1");
 	    driver = new FirefoxDriver();
 	    //driver = new ChromeDriver();
 	    //driver = new InternetExplorerDriver(); // Not yet tested due to missing IE11 support

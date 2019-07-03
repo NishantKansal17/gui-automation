@@ -62,7 +62,8 @@ public class CPSCentralBasicAutomationTest {
 //		   option.addArguments("--disable-extensions");
 		   FirefoxProfile profile = new FirefoxProfile();
 		   profile.setPreference("browser.download.dir", fileDownloadPath);
-		   profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream"); 
+		   profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
+		   System.setProperty("DISPLAY", ":1");
 	       
 	    //driver = new ChromeDriver(option);
 		   driver = new FirefoxDriver(profile);
