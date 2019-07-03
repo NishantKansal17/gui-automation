@@ -31,7 +31,11 @@ public class PolicyBuilderBasicAutomationTest {
 	  static {
 	    System.setProperty( "webdriver.firefox.bin", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" );
 	    // see http://code.google.com/p/selenium/wiki/ChromeDriver
-	    System.setProperty( "webdriver.chrome.driver", "C:\\Users\\nikansal\\Desktop\\chromedriver_win32\\chromedriver.exe" );
+	    if (System.getProperty("os.name").startsWith("Windows")) {
+	    	System.setProperty( "webdriver.chrome.driver", "C:\\Users\\nikansal\\Desktop\\chromedriver_win32\\chromedriver.exe" );
+	    } else {
+	    	System.setProperty( "webdriver.chrome.driver", "/usr/bin/chromedriver" );
+	    }
 	    // See http://code.google.com/p/selenium/wiki/InternetExplorerDriver
 	    System.setProperty( "webdriver.ie.driver", "C:\\Program Files\\Internet Explorer\\IEDriverServer.exe" );
 	  }
