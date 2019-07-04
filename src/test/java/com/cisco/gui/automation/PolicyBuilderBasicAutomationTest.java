@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -43,9 +42,10 @@ public class PolicyBuilderBasicAutomationTest {
 
 	  @BeforeClass
 	  public void setUp() throws Exception {
-		  System.setProperty("DISPLAY", ":1");
-	    driver = new FirefoxDriver();
-	    //driver = new ChromeDriver();
+		  //System.setProperty("DISPLAY", ":1");
+		  //FirefoxOptions firefoxOptions = new FirefoxOptions();
+	    //driver = new FirefoxDriver();
+	    driver = new ChromeDriver();
 	    //driver = new InternetExplorerDriver(); // Not yet tested due to missing IE11 support
 	    selenium = new WebDriverBackedSelenium( driver, baseUrl );
 	    driver.manage().window().setSize( new Dimension( 1000, 600 ) );
